@@ -54,7 +54,7 @@ int main(int argc, char** argv){
         h_adj[pos] = w;
     }
     
-    c   udaDeviceSynchronize();
+    cudaDeviceSynchronize();
 
     for(k = 0; k < n; k++){
         for(i = 0; i < n; i++){
