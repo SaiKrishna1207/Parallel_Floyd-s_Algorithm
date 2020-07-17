@@ -6,7 +6,7 @@ Floyd's Algorithm is used to find shortest path distances between every pair in 
 So, for every pair (i, j), where i is the source vertex and j is the destination vertex, the kernel calculates : **min (dp[i][j], dp[i][k] + dp[k][j])**, 
 where k is the intermediate vertex through which the path is traversed. Since this has to be done for all **n** vertices, and it takes **O(n^2)** time to traverse the edges, the overall time complexity of the serial algorithm is **O(n^3)**.
 
-By using multithreading, this complexity is brought down approximately to **O(n)** as each thread performs the computation for 1 edge. To avoid collisions in accesses and better synchronization, the performance takes a slight hit as the threads wait after the read and perform the write only after all the reads are done.
+By using CUDA, the GPU is involved and hence this complexity is brought down approximately to **O(n)** as each thread performs the computation for 1 edge. To avoid collisions in accesses and better synchronization, the performance takes a slight hit as the threads wait after the read and perform the write only after all the reads are done.
 
 The speedup achieved was as follows : 
 
